@@ -13,7 +13,7 @@ class App extends React.Component {
         let tmpArray = []
         data.map((post) => {
           tmpArray.push(post.message)
-          // console.log("tmpArray", tmpArray)
+          console.log("tmpArray", tmpArray)
         })
             this.setState({
                 posts: tmpArray
@@ -40,7 +40,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        this.getPosts();
+        // this.getPosts();
       });
   }
 
@@ -54,7 +54,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        this.getPosts();
+        // this.getPosts();
       });
   }
 

@@ -9,7 +9,7 @@ const pool = new Pool({
 
 const getPosts = () => {
     return new Promise(function(resolve, reject) {
-      pool.query('SELECT * FROM posts ORDER BY id ASC', (error, results) => {
+      pool.query('SELECT * FROM  ORDER BY id ASC', (error, results) => {
         if (error) {
           reject(error)
         }
