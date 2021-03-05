@@ -5,20 +5,26 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = { posts: [] };
+    this.getPosts()
   }
 
    getPosts() {
     fetch('http://localhost:3001')
     .then(response => response.json())
       .then(data => {
+        console.log("data app file", data.rows)
         let tmpArray = []
-        data.map((post) => {
+        data.rows.map((post) => {
           tmpArray.push(post.message)
-          console.log("tmpArray", tmpArray)
+          // console.log("tmpArray", tmpArray)
         })
             this.setState({
                 posts: tmpArray
             })
+          // this.setState({
+          //       posts: data
+          //   })
+
         console.log('Success:', this.setState);
         })
       .catch((error) => {
@@ -61,16 +67,22 @@ class App extends React.Component {
 
 
   render () {
+    console.log("array", this.state.posts) 
           return (
             <div>
            
           <div>
               <h1>posts</h1>
-              { this.state.posts.map(post => (
+              <div>
+                
+               {this.state.posts.map(post => (
+                  <p>{post}</p>
+                ))}
+              
+              </div>
 
-                      <p> {post.name} </p>
-                  ))
-              }
+              
+         
               </div>
               <button onClick={ this.createPost }>Add post</button>
               <button onClick={ this.deletePost }>Delete post</button>
