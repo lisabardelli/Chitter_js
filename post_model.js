@@ -27,7 +27,7 @@ pool.connect((err, client, release) => {
 
 const getPosts = () => {
 // connect()
-console.log("inside getposts")
+// console.log("inside getposts")
     return new Promise(function(resolve, reject) {
       pool.query('SELECT * FROM posts ORDER BY id ASC', (error, results) => {
         if (error) {

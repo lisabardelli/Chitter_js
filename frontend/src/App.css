@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-content: flex-start;
+  /* height: 80%;
+  width: 50%;
+  background-color: rgb(205, 226, 200);
+  position: center; */
+  
+}
+
+
+.item {
+  align-self: auto;
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  /* line-height: 75px; */
+  font-size: 15px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -12,20 +12,15 @@ class App extends React.Component {
     fetch('http://localhost:3001')
     .then(response => response.json())
       .then(data => {
-        console.log("data app file", data.rows)
+        // console.log("data app file", data)
         let tmpArray = []
-        data.rows.map((post) => {
+        data.map((post) => {
           tmpArray.push(post.message)
           // console.log("tmpArray", tmpArray)
         })
             this.setState({
                 posts: tmpArray
             })
-          // this.setState({
-          //       posts: data
-          //   })
-
-        console.log('Success:', this.setState);
         })
       .catch((error) => {
         console.error('Error:', error);
@@ -47,7 +42,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        // this.getPosts();
+        this.getPosts();
       });
   }
 
@@ -61,7 +56,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        // this.getPosts();
+        this.getPosts();
       });
   }
 
@@ -73,16 +68,14 @@ class App extends React.Component {
            
           <div>
               <h1>posts</h1>
-              <div>
-                
-               {this.state.posts.map(post => (
-                  <p>{post}</p>
-                ))}
-              
-              </div>
-
-              
-         
+              <div className="container">
+              { this.state.posts.map(post => (
+                        
+                              <div className="item"> {post} </div>
+                       
+                  ))
+              }
+           </div>
               </div>
               <button onClick={ this.createPost }>Add post</button>
               <button onClick={ this.deletePost }>Delete post</button>
