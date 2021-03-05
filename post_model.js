@@ -7,26 +7,10 @@ const pool = new Pool({
   port: 5432,
 });
 
-const connect = () => {
 
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('Error acquiring client', err.stack)
-  } else {
-    console.error("success pool" )
-  }
-  client.query('SELECT NOW()', (err, result) => {
-    release()
-    if (err) {
-      return console.error('Error executing query', err.stack)
-    }
-    console.log(result.rows)
-  })
-})
-}
 
 const getPosts = () => {
-// connect()
+
 // console.log("inside getposts")
     return new Promise(function(resolve, reject) {
       pool.query('SELECT * FROM posts ORDER BY id ASC', (error, results) => {
