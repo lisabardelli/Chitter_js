@@ -1,6 +1,6 @@
 # Chitter 
 
-Using javascript
+Build a small Twitter clone using Javascript.
 
 ### How to run locally
 
