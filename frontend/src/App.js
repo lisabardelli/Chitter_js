@@ -42,7 +42,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        this.getPosts();
+        // this.getPosts();
       });
   }
 
@@ -56,7 +56,7 @@ class App extends React.Component {
       })
       .then(data => {
         alert(data);
-        this.getPosts();
+        // this.getPosts();
       });
   }
 
@@ -65,20 +65,21 @@ class App extends React.Component {
     console.log("array", this.state.posts) 
           return (
             <div>
-           
+              <h1 className="title">Chitter APP</h1>
+              <h2 className="title">Click below to add your post :) </h2>
+              <div className="button" >
+              <button onClick={ this.createPost }>Add post</button></div>
+              {/* <button className="button" onClick={ this.deletePost }>Delete post</button> */}
+                
           <div>
-              <h1>posts</h1>
               <div className="container">
-              { this.state.posts.map(post => (
-                        
-                              <div className="item"> {post} </div>
-                       
+              { this.state.posts.map(post => (   
+                 <div className="item"> {post} </div>
                   ))
               }
            </div>
-              </div>
-              <button onClick={ this.createPost }>Add post</button>
-              <button onClick={ this.deletePost }>Delete post</button>
+       
+           </div>
             </div>
           );
           }

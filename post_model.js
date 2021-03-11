@@ -29,18 +29,8 @@ const getPosts = () => {
         if (error) {
           reject(error)
         }
-        resolve(`A new post has been added: ${results.rows[0]}`)
-      })
-    })
-  }
-  const deletePost = () => {
-    return new Promise(function(resolve, reject) {
-      const id = parseInt(request.params.id)
-      pool.query('DELETE FROM posts WHERE id = $1', [id], (error, results) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(`post deleted with ID: ${id}`)
+  
+        resolve(`A new post has been added`)
       })
     })
   }
@@ -48,5 +38,5 @@ const getPosts = () => {
   module.exports = {
     getPosts,
     createPost,
-    deletePost,
+
   }

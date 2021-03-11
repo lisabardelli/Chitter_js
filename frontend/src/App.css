@@ -36,21 +36,35 @@
     transform: rotate(360deg);
   }
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  align-content: flex-start;
-
-  
+.container{
+  padding-left: 400px;
+  padding-top: 60px;
 }
 
 
 .item {
   align-self: auto;
   background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
+  width: 600px;
+  margin: 50px;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
+  border-style:  25px;
+}
+
+#root {
+  padding: 400px;
+
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
